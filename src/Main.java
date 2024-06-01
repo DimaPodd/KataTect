@@ -55,7 +55,10 @@ public class Main{
                  throw new IllegalArgumentException("недопустимое значяние");
          }
          if (isRoman) {
-             return Roman.resultNumberToRoman(result);
+             if (result < 1) {
+                 throw new IllegalArgumentException("результат операции в римских числах меньше 1.");
+             }
+                 return Roman.resultNumberToRoman(result);
          } else {
              return String.valueOf(result);
          }
